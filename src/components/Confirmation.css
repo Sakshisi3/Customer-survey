@@ -1,0 +1,42 @@
+.confirmation-dialog {
+    padding: 25px;
+    background-color: #ffcc00;
+    color: #333;
+    border-radius: 15px;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: popIn 0.3s ease-out;
+}
+
+.confirmation-dialog p {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+.confirmation-dialog button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.confirmation-dialog button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

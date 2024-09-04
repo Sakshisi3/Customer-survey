@@ -1,0 +1,19 @@
+.welcome-screen {
+    align-item:center;
+    padding:10vw;
+    
+
+}
+
+.welcome-screen button {
+    
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}

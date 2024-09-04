@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import WelcomeScreen from './components/Welcomescreen';
+import Survey from './components/SurveyPage';
+import ThankYouScreen from './components/ThankyouPage';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isSurveyStarted, setIsSurveyStarted] = useState(false);
+    const [isSurveyCompleted, setIsSurveyCompleted] = useState(false);
+
+    const startSurvey = () => {
+        setIsSurveyStarted(true);
+        setIsSurveyCompleted(false);
+    };
+
+    const completeSurvey = () => {
+        setIsSurveyStarted(false);
+        setIsSurveyCompleted(true);
+    };
+
+    return (
+        <div>
+            {!isSurveyStarted && !isSurveyCompleted && <WelcomeScreen onStart={startSurvey} />}
+            {isSurveyStarted && <Survey onComplete={completeSurvey} />}
+            {isSurveyCompleted && <ThankYouScreen onReset={startSurvey} />}
+        </div>
+    );
 }
 
 export default App;
